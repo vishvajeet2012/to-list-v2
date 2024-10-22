@@ -13,6 +13,7 @@ function getTask () {
 taskStore.push(inputBox)  //push data inside the taskstore 
 // fetch data form taskStore using map 
 taskStore.map((value,index) =>{
+ 
     para.innerText= value
     taskSection.appendChild(para);
 
@@ -24,9 +25,15 @@ taskStore.map((value,index) =>{
 document.getElementById("inputGet").value = ""; 
 
  deleteBtn.addEventListener("click" , function(){
-       console.log(taskStore)
+       let newtask = taskStore.filter(t => t != taskStore)
+
+    console.log(newtask)   
 
 })
+
+
+
+
 
 // setInterval(function() {
 //     console.log(para);
