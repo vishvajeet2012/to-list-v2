@@ -20,16 +20,16 @@ taskStore.map((value,index) =>{
     taskSection.appendChild(deleteBtn)
     deleteBtn.innerText= "Delete"
     
+    document.getElementById("inputGet").value = ""; 
 
+    deleteBtn.addEventListener("click" , function(){
+          let newtask = taskStore.filter(t => t != taskStore)
+   
+       console.log(newtask)   
+   
+   })
 })
-document.getElementById("inputGet").value = ""; 
 
- deleteBtn.addEventListener("click" , function(){
-       let newtask = taskStore.filter(t => t != taskStore)
-
-    console.log(newtask)   
-
-})
 
 
 
