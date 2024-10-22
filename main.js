@@ -9,10 +9,17 @@ function getTask () {
     let para =  document.createElement('p') // cretae paragraph tag
     let deleteBtn = document.createElement('button') // delete btn for paragraph tag 
 
-      taskSection.appendChild(deleteBtn)
-taskStore.push(inputBox)
+   
+taskStore.push(inputBox)  //push data inside the taskstore 
+// fetch data form taskStore using map 
 taskStore.map((value,index) =>{
-            taskSection.appendChild()
+    para.innerText= value
+    taskSection.appendChild(para);
+
+    taskSection.appendChild(deleteBtn)
+    deleteBtn.innerText= "Delete"
+    
+
 })
 
  deleteBtn.addEventListener("click" , function(){
