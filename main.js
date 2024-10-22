@@ -15,8 +15,9 @@ let deleteBtn = document.createElement('button') // delete btn for paragraph tag
 
 
  deleteBtn.addEventListener("click" , function(){
-                 
- })
+        
+
+})
 
 // setInterval(function() {
 //     console.log(para);
