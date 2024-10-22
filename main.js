@@ -1,6 +1,7 @@
 console.log("this is vishu ..")
 let taskStore = [] //array
-
+            let inputContainer =document.createElement('div')
+                        
 
 function getTask () {
 
@@ -8,16 +9,17 @@ function getTask () {
     let taskSection = document.getElementById("taskSection") // task section where  paragraoh tag will append
     let para =  document.createElement('p') // cretae paragraph tag
     let deleteBtn = document.createElement('button') // delete btn for paragraph tag 
-
-   
+inputContainer.className="inputContainer"
+taskSection.appendChild(inputContainer)
 taskStore.push(inputBox)  //push data inside the taskstore 
+
 // fetch data form taskStore using map 
 taskStore.map((value,index) =>{
  
     para.innerText= value
-    taskSection.appendChild(para);
+    inputContainer.appendChild(para);
 
-    taskSection.appendChild(deleteBtn)
+    inputContainer.appendChild(deleteBtn)
     deleteBtn.innerText= "Delete"
     deleteBtn.dataset.id =index    /// dataSet se up element or tag ko uniquely identity k liye use kr rha hu
     para.dataset.ids = index  /// dataSet html ka part hai 

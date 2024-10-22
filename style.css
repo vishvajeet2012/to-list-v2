@@ -52,6 +52,7 @@ button:hover {
 }
 
 #taskSection {
+    flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
     
