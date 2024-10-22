@@ -13,5 +13,19 @@ let deleteBtn = document.createElement('button') // delete btn for paragraph tag
         deleteBtn.innerText ="Delete"
     para.innerText = inputBox
 
-console.log(inputBox) 
+
+ deleteBtn.addEventListener("click" , function(){
+                 
+ })
+
+// setInterval(function() {
+//     console.log(para);
+// }, 3000);
+
+
+
+
+
+
+   
 }
