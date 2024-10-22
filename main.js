@@ -19,20 +19,22 @@ taskStore.map((value,index) =>{
 
     taskSection.appendChild(deleteBtn)
     deleteBtn.innerText= "Delete"
-    deleteBtn.dataset.id =index
-    para.dataset.ids = index
+    deleteBtn.dataset.id =index    /// dataSet se up element or tag ko uniquely identity k liye use kr rha hu
+    para.dataset.ids = index  /// dataSet html ka part hai 
     document.getElementById("inputGet").value = ""; 
 
 
 
-    deleteBtn.addEventListener("click" , function(){
-          let newtask = taskStore.filter(t => t != index)
-   
-       console.log(newtask)   
-   
-   })
+    
 })
 
+
+deleteBtn.addEventListener("click" , function(){
+    let newtask = taskStore.filter(t => t != deleteBtn.dataset.id)
+getTask()  // delete k baad re render krne k liye 
+ console.log(newtask)   
+
+})
 
 
 
