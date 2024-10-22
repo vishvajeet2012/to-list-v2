@@ -19,11 +19,14 @@ taskStore.map((value,index) =>{
 
     taskSection.appendChild(deleteBtn)
     deleteBtn.innerText= "Delete"
-    
+    deleteBtn.dataset.id =index
+    para.dataset.ids = index
     document.getElementById("inputGet").value = ""; 
 
+
+
     deleteBtn.addEventListener("click" , function(){
-          let newtask = taskStore.filter(t => t != taskStore)
+          let newtask = taskStore.filter(t => t != index)
    
        console.log(newtask)   
    
