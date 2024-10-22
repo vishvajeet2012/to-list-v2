@@ -21,6 +21,7 @@ taskStore.map((value,index) =>{
     
 
 })
+document.getElementById("inputGet").value = ""; 
 
  deleteBtn.addEventListener("click" , function(){
        console.log(taskStore)
