@@ -8,6 +8,11 @@ body {
     align-items: center;
     height: 100vh;
 }
+.inputContainer{
+    display: flex;
+    flex-direction: column; 
+
+}
 
 .mainContainer {
     background: #ffffff;
@@ -52,6 +57,7 @@ button:hover {
 }
 
 #taskSection {
+  
     flex-wrap: wrap;
     display: flex;
     justify-content: space-between;

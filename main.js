@@ -19,7 +19,7 @@ taskStore.map((value,index) =>{
     para.innerText= value
     inputContainer.appendChild(para);
 
-    inputContainer.appendChild(deleteBtn)
+    para.appendChild(deleteBtn)
     deleteBtn.innerText= "Delete"
     deleteBtn.dataset.id =index    /// dataSet se up element or tag ko uniquely identity k liye use kr rha hu
     para.dataset.ids = index  /// dataSet html ka part hai 
