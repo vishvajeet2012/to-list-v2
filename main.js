@@ -9,11 +9,11 @@ function getTask () {
     let para =  document.createElement('p') // cretae paragraph tag
     let deleteBtn = document.createElement('button') // delete btn for paragraph tag 
 
-        taskSection.appendChild(para)   
-        taskSection.append(deleteBtn)
-        deleteBtn.innerText ="Delete"
-    para.innerText = inputBox
+      taskSection.appendChild(deleteBtn)
 taskStore.push(inputBox)
+taskStore.map((value,index) =>{
+            taskSection.appendChild()
+})
 
  deleteBtn.addEventListener("click" , function(){
        console.log(taskStore)
