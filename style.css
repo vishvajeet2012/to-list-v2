@@ -11,6 +11,7 @@ body {
 .inputContainer{
     display: flex;
     flex-direction: column; 
+    justify-content: space-between;
 
 }
 
@@ -51,18 +52,19 @@ button:hover {
 }
 
 .taskBox {
+  
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 #taskSection {
-  
+
     flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
     
-height: 20vh;
+height: 60vh;
     align-items: center;
     padding: 12px;
     border-bottom: 1px solid #ddd;
