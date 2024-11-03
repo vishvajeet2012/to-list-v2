@@ -1,52 +1,62 @@
 console.log("this is vishu ..");
-let taskStore = ["sdds","sdfsd"]; //array
-let inputContainer = document.createElement("div");
+let taskStore = []; //array
+
 
 function getTask() {
+
+
   let inputBox = document.getElementById("inputGet").value; // here  i get value form input get
-  let taskSection = document.getElementById("taskSection"); // task section where  paragraoh tag will append
-  let para = document.createElement("p"); // cretae paragraph tag
-  let deleteBtn = document.createElement("button"); // delete btn for paragraph tag
-
-  inputContainer.className = "inputContainer";
-  taskSection.appendChild(inputContainer);
-  taskStore.push(inputBox); //push data inside the taskstore
-  console.warn(inputBox);
-  // fetch data form taskStore using map
-  taskStore.forEach((value, index) => {
-    para.innerText = value;
-    inputContainer.appendChild(para);
-    para.appendChild(deleteBtn);
-    deleteBtn.innerText = "Delete";
-    deleteBtn.dataset.id = index; /// dataSet se up element or tag ko uniquely identity k liye use kr rha hu
-    para.dataset.ids = index; /// dataSet html ka part hai
+  if (inputBox===""){
+ 
+    console.warn(taskStore)
+    console.log("ok")
+  }
+  else{
     document.getElementById("inputGet").value = "";
-    if (inputBox === "") {
-      // ha pata hai ye condition shi nahi h par me paragraph tag ko regenrate hone se rok rha hu
-      para.remove();
-    }
+    taskStore.push(inputBox); //push data inside the taskstore
+    console.warn(inputBox);
+   renderTask()
 
+  }
+}
+    function renderTask() {
+      let taskSection = document.getElementById("taskSection"); // task section where  paragraoh tag will append
+      taskSection.innerHTML = "";
+ 
+  // fetch data form taskStore using map
+  for (let i = 0; i < taskStore.length; i++)  {
+    
+    let para = document.createElement("p"); // cretae paragraph tag
+  let deleteBtn = document.createElement("button"); // delete btn for paragraph tag
+      let inputContainer = document.createElement("div");
+    inputContainer.className = "inputContainer";
+    taskSection.appendChild(inputContainer);
+    deleteBtn.innerText = "Delete"; 
+    para.innerText = taskStore[i];
+    inputContainer.appendChild(para);
+    inputContainer.appendChild(deleteBtn);
+   
+    // deleteBtn.dataset.id = i; /// dataSet se up element or tag ko uniquely identity k liye use kr rha hu
+    // para.dataset.ids = i; /// dataSet html ka part hai
 
     deleteBtn.addEventListener("click", function () {
-                DeleteTask()          
-    })
-  });
-
- function DeleteTask() {
-    console.log()
+      DeleteTask(i);
+    });
+  
+  };
+ 
+  function DeleteTask(e) {
     //  taskStore array storeb-
-    let id = deleteBtn.dataset.id;
-    let vi = taskStore.splice(id, 1);
 
 
+  taskStore.splice(e, 1);
+ renderTask()
+   
 
-
-    para.remove();
-
- }
-
-setInterval(() => {
-        console.error(taskStore)   
-}, 1000);
+  }
 }
-getTask()
+
+  setInterval(() => {
+    console.error(taskStore);
+  }, 3000);
+
