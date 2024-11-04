@@ -36,8 +36,8 @@ function getTask() {
     inputContainer.appendChild(para);
     inputContainer.appendChild(deleteBtn);
    
-    // deleteBtn.dataset.id = i; /// dataSet se up element or tag ko uniquely identity k liye use kr rha hu
-    // para.dataset.ids = i; /// dataSet html ka part hai
+    deleteBtn.dataset.id = i; /// dataSet se up element or tag ko uniquely identity k liye use kr rha hu
+    para.dataset.ids = i; 
 
     deleteBtn.addEventListener("click", function () {
       DeleteTask(i);
