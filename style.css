@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #eef2f3;
+    background-color: #a3a3a3;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -8,13 +8,22 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+
 }
 .inputContainer{
     display: flex;
-    flex-direction: column; 
+ 
+    flex-direction: row; 
+    flex-wrap: wrap;
     justify-content: space-between;
-
+gap: 5px;
 }
+ .taskFeild{                      /* task feild  */
+     text-align:center;
+   padding: 2px 15px;
+   border-radius: 5px ;
+   background:#ddd;
+}                       
 
 .mainContainer {
     width: 100%;
@@ -23,6 +32,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 350px;
+   
 }
 
 .inputBox {
@@ -55,7 +65,7 @@ button:hover {
 
 .taskBox {
     width: 100%;
-  overflow: scroll;
+
     list-style: none;
     padding: 0;
     margin: 0;
@@ -66,7 +76,7 @@ button:hover {
     flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
-    
+    overflow: auto;
 height: 60vh;
     align-items: center;
     padding: 12px;
@@ -96,4 +106,16 @@ height: 60vh;
 #taskSection p.completed {
     text-decoration: line-through;
     color: #888;
+}
+
+#clearSaved{
+
+background-color: crimson;
+font-weight: 500;
+transition: all ease-in;
+
+}
+#clearSaved:hover{
+        background-color: rgb(184, 38, 67);
+
 }

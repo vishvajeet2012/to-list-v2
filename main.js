@@ -1,7 +1,7 @@
 console.log("this is vishu ..");
 let taskStore = []; //array
-
-
+let storage
+let CheckData
 function getTask() {
 
 
@@ -14,15 +14,35 @@ function getTask() {
   else{
     document.getElementById("inputGet").value = "";
     taskStore.push(inputBox); //push data inside the taskstore
-    console.warn(inputBox);
-   renderTask()
+
+storageBox()
 
   }
 }
+        function storageBox () {
+  
+        storage = localStorage.setItem('task' ,JSON.stringify(taskStore))
+
+  
+  
+          let getData = JSON.parse(localStorage.getItem('task'))
+          taskStore =getData || [];
+        renderTask()
+
+      }
+
+
     function renderTask() {
       let taskSection = document.getElementById("taskSection"); // task section where  paragraoh tag will append
       taskSection.innerHTML = "";
- 
+      
+     
+
+
+
+
+
+
   // fetch data form taskStore using map
   for (let i = 0; i < taskStore.length; i++)  {
     
@@ -35,28 +55,47 @@ function getTask() {
     para.innerText = taskStore[i];
     inputContainer.appendChild(para);
     inputContainer.appendChild(deleteBtn);
-   
+    para.className ="taskFeild";
+    
     deleteBtn.dataset.id = i; /// dataSet se up element or tag ko uniquely identity k liye use kr rha hu
     para.dataset.ids = i; 
-
+    
+      
     deleteBtn.addEventListener("click", function () {
-      DeleteTask(i);
+      DeleteTask(deleteBtn.dataset.id); 
+     
+      
     });
   
   };
  
+
+
   function DeleteTask(e) {
-    //  taskStore array storeb-
+    //  taskStore array storeb
+  taskStore.splice(e, 1); // remve tak from array 
 
-
-  taskStore.splice(e, 1);
- renderTask()
-   
+ storageBox() //ystorage function ko call kiya hai and rerender the task list 
 
   }
 }
 
-  setInterval(() => {
-    console.error(taskStore);
-  }, 3000);
 
+window.onload  = function(){
+  const savedTask =JSON.parse(localStorage.getItem('task'))
+  taskStore = savedTask || []
+  renderTask()
+}
+
+
+    
+
+
+function clearSaved(){
+      localStorage.removeItem('task')
+}
+
+
+setInterval(()=>{
+  console.log(taskStore)
+},5000)
